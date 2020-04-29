@@ -1,0 +1,25 @@
+{
+  "name": "shayan/onlineclothecommerce",
+  "description": "Awesome starter plugin example",
+  "type": "project",
+  "license": "GPLv2 or later",
+  "authors": [
+    {
+      "name": "ShayaNNN",
+      "email": "shayan3k@gmail.com",
+      "homepage": "http://Shayanmotalebi.ir"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "michaeluno/admin-page-framework": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Inc\\": "./inc"
+    },
+    "classmap": [
+      "../../../wp-includes/"
+    ]
+  }
+}

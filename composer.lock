@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "52e501db40fbdbb2a8bc814bcb623ebd",
+    "packages": [
+        {
+            "name": "michaeluno/admin-page-framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaeluno/admin-page-framework.git",
+                "reference": "d0202ba09d902e6a9d1e220426bd2ea50318baed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaeluno/admin-page-framework/zipball/d0202ba09d902e6a9d1e220426bd2ea50318baed",
+                "reference": "d0202ba09d902e6a9d1e220426bd2ea50318baed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "suggest": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "A PHP class based framework which facilitates WordPress plugin and theme development.",
+            "homepage": "http://admin-page-framework.michaeluno.jp/",
+            "keywords": [
+                "Settings",
+                "admin page",
+                "form",
+                "framework",
+                "options",
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2019-05-31T01:14:18+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "michaeluno/admin-page-framework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
