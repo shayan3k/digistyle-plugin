@@ -7,28 +7,43 @@
 namespace Inc\RestApi;
 
 use WP_Error;
+use WP_Query;
 
-class ProductRestApi
+// use Inc\RestApi\RestApiController;
+
+class ProductRestApi extends RestApiController
 {
-
     public function __construct()
     {
-        add_action('rest_api_init', function () {
-            register_rest_route('myplugin/v1', '/author/(?P<id>\d+)', array(
-                'methods' => 'GET',
-                'callback' => array($this, 'register_product_rest_api'),
-                'args' => array(
-                    'id' => array(
-                        'validate_callback' => function ($param, $request, $key) {
-                            return is_numeric($param);
-                        }
-                    ),
-                ),
-            ));
-        });
+        //declare routes
+        $args = array(
+            array(
+                'uri' => '/author/(?P<id>\d+)',
+                'method' => 'GET',
+                'callback' => 'register_product_rest_api',
+                'validationCallback' => 'validateInputs'
+            ),
+            array(
+                'uri' => '/hero',
+                'method' => 'GET',
+                'callback' => 'rest_hero_callback',
+                'validationCallback' => 'validateInputs'
+            ),
+
+        );
+
+
+        //register other configs
+        $this->register('myplugin/v1', $args);
     }
 
+    //sanatize callback
+    public function validateInputs($param, $request, $key)
+    {
+        return is_numeric($param);
+    }
 
+    //route callback
     public function register_product_rest_api($data)
     {
         $posts = get_posts(array(
@@ -40,5 +55,26 @@ class ProductRestApi
         }
 
         return $posts[0]->post_title;
+    }
+
+
+    //HERO route callback
+    public function rest_hero_callback($data)
+    {
+        $img[0] = get_option('hero_img_url_0');
+        $img[1] = get_option('hero_img_url_1');
+        $img[2] = get_option('hero_img_url_2');
+        $img[3] = get_option('hero_img_url_3');
+        $img[4] = get_option('hero_img_url_4');
+        $img[5] = get_option('hero_img_url_5');
+
+        $args = [];
+        $i = 0;
+        while ($i < 6) {
+            $img[$i] ? array_push($args, strval($img[$i])) : '';
+            $i++;
+        }
+
+        return $args;
     }
 }

@@ -69,6 +69,7 @@ if (class_exists('Inc\\Init')) {
 //  */
 // if (is_admin())
 //     Settings::register_widgets();
+
 /**
  * Initialize the settings for admin
  */
@@ -77,16 +78,14 @@ if (is_admin()) {
     $adminPage->register();
 }
 
-
 /**
  * Initialize the settings for admin
  */
-
 if (is_admin())
     $my_settings_page = new MySettingsPage();
 
 
 /**
- * Register Rest Api
+ * Register Products Rest Api
  */
-$restApi = new ProductRestApi();
+new ProductRestApi();

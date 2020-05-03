@@ -18,8 +18,11 @@ class Enqueue
 
 	function enqueue()
 	{
+		//Enable Media 
+		wp_enqueue_media();
+
 		// enqueue all our scripts
-		wp_enqueue_style('mypluginstyle', PLUGIN_URL . 'assets/mystyle.css');
-		wp_enqueue_script('mypluginscript', PLUGIN_URL . 'assets/myscript.js');
+		wp_enqueue_style('adminStyle', PLUGIN_URL . 'assets/mystyle.css');
+		wp_enqueue_script('adminScript', PLUGIN_URL . 'assets/myscript.js');
 	}
 }

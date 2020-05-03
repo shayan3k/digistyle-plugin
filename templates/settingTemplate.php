@@ -12,8 +12,8 @@
 
 			<form method="post" action="options.php">
 				<?php
-				settings_fields('sample_options_group');
-				do_settings_sections('sample_page');
+				settings_fields('setting_page_options_group');
+				do_settings_sections('setting_page');
 				submit_button();
 				?>
 			</form>

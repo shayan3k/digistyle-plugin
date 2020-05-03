@@ -37,18 +37,18 @@ class Admin extends BaseController
 		$this->setSections();
 		$this->setFields();
 
-		$this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
+		$this->settings->addPages($this->pages)->withSubPage('Digistyle')->addSubPages($this->subpages)->register();
 	}
 
 	public function setPages()
 	{
 		$this->pages = array(
 			array(
-				'page_title' => 'Sample Page Dashboard',
-				'menu_title' => 'Dashboard',
+				'page_title' => 'Digistyle',
+				'menu_title' => 'Digistyle',
 				'capability' => 'manage_options',
-				'menu_slug' => 'sample_page',
-				'callback' => array($this->callbacks, 'dashboardTemplate'),
+				'menu_slug' => 'setting_page',
+				'callback' => array($this->callbacks, 'settingTemplate'),
 				'icon_url' => 'dashicons-store',
 				'position' => 110
 			)
@@ -59,7 +59,7 @@ class Admin extends BaseController
 	{
 		$this->subpages = array(
 			array(
-				'parent_slug' => 'sample_page',
+				'parent_slug' => 'setting_page',
 				'page_title' => 'Sample SubPage',
 				'menu_title' => 'SubPage',
 				'capability' => 'manage_options',
@@ -73,13 +73,34 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'option_group' => 'sample_options_group',
-				'option_name' => 'text_example',
-				'callback' => array($this->callbacks, 'alecadddOptionsGroup')
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_0',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
 			),
 			array(
-				'option_group' => 'sample_options_group',
-				'option_name' => 'first_name'
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_1',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
+			),
+			array(
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_2',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
+			),
+			array(
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_3',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
+			),
+			array(
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_4',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
+			),
+			array(
+				'option_group' => 'setting_page_options_group',
+				'option_name' => 'hero_img_url_5',
+				'callback' => array($this->callbacks, 'TextExampleSanetize')
 			)
 		);
 
@@ -90,10 +111,10 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'id' => 'alecaddd_admin_index',
+				'id' => 'admin-setting-section-id',
 				'title' => 'Settings',
-				'callback' => array($this->callbacks, 'alecadddAdminSection'),
-				'page' => 'sample_page'
+				'callback' => array($this->callbacks, 'settingPageSections'),
+				'page' => 'setting_page'
 			)
 		);
 
@@ -104,27 +125,73 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'id' => 'text_example',
-				'title' => 'Text Example',
-				'callback' => array($this->callbacks, 'alecadddTextExample'),
-				'page' => 'sample_page',
-				'section' => 'alecaddd_admin_index',
+				'id' => 'hero_img_url_0',
+				'title' => 'Hero Img Zero',
+				'callback' => array($this->callbacks, 'settingPageField0'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
 				'args' => array(
-					'label_for' => 'text_example',
+					'label_for' => 'hero_img_url_0',
 					'class' => 'example-class'
 				)
+
+			), array(
+				'id' => 'hero_img_url_1',
+				'title' => 'Hero Img One',
+				'callback' => array($this->callbacks, 'settingPageField1'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
+				'args' => array(
+					'label_for' => 'hero_img_url_1',
+					'class' => 'example-class'
+				)
+
+			), array(
+				'id' => 'hero_img_url_2',
+				'title' => 'Hero Img Two',
+				'callback' => array($this->callbacks, 'settingPageField2'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
+				'args' => array(
+					'label_for' => 'hero_img_url_2',
+					'class' => 'example-class'
+				)
+
+			), array(
+				'id' => 'hero_img_url_3',
+				'title' => 'Hero Img Three',
+				'callback' => array($this->callbacks, 'settingPageField3'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
+				'args' => array(
+					'label_for' => 'hero_img_url_3',
+					'class' => 'example-class'
+				)
+
+			), array(
+				'id' => 'hero_img_url_4',
+				'title' => 'Hero Img Fourth',
+				'callback' => array($this->callbacks, 'settingPageField4'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
+				'args' => array(
+					'label_for' => 'hero_img_url_4',
+					'class' => 'example-class'
+				)
+
+			), array(
+				'id' => 'hero_img_url_5',
+				'title' => 'Hero Img Fifth',
+				'callback' => array($this->callbacks, 'settingPageField5'),
+				'page' => 'setting_page',
+				'section' => 'admin-setting-section-id',
+				'args' => array(
+					'label_for' => 'hero_img_url_5',
+					'class' => 'example-class'
+				)
+
 			),
-			array(
-				'id' => 'first_name',
-				'title' => 'First Name',
-				'callback' => array($this->callbacks, 'alecadddFirstName'),
-				'page' => 'sample_page',
-				'section' => 'alecaddd_admin_index',
-				'args' => array(
-					'label_for' => 'first_name',
-					'class' => 'example-class'
-				)
-			)
+
 		);
 
 		$this->settings->setFields($args);

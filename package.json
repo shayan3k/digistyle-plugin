@@ -1,0 +1,22 @@
+{
+  "name": "digistyle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayan3k/wp_plugin_boilerPlate.git"
+  },
+  "author": "Shayan3k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shayan3k/wp_plugin_boilerPlate/issues"
+  },
+  "homepage": "https://github.com/shayan3k/wp_plugin_boilerPlate#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
