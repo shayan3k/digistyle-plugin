@@ -7,7 +7,7 @@
 namespace Inc\Base;
 
 use Inc\PostTypes\wp_post_type_product;
-use Inc\Widget\customWidget;
+use Inc\RestApi\RegisterRestApi;
 
 class Settings
 {
@@ -30,6 +30,9 @@ class Settings
 
 		//register custom taxanomy for products
 		add_action('init', array($this, 'register_custom_taxanomy'), 0);
+
+		//Register Rest Apis
+		new RegisterRestApi();
 
 		//register theme support
 		$this->register_theme_support();

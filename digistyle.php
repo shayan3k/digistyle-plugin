@@ -88,4 +88,3 @@ if (is_admin())
 /**
  * Register Products Rest Api
  */
-new ProductRestApi();
